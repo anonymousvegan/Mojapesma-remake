@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php
 session_start();
-if(isset($_COOKIE["token"]) || isset($_SESSION["id"])){
+if( 
+    ( isset($_COOKIE["token"]) and isset($_COOKIE["username"]) and isset($_COOKIE["selector"])
+    )
+    || isset($_SESSION["id"])){
     header("location: ../");
     exit();
 }
