@@ -57,7 +57,7 @@
                 }
               }}
               else{
-                  echo "fajlovi/profile-icon.svg";
+                  echo "profile-icon.svg";
               }
           ?>
             " alt="profile-icon">
@@ -74,11 +74,10 @@
                   <li>
                     <a href="profil.php?profil='.$_SESSION["ime"].'">TVOJE PESME</a>
                   </li>
-                  <form id="izlogujse" method="post" action="backend/izloguj_se.php">
                     <li>
-                      <a onclick="izloguj_se()" href="#" class="dropdownlink">ODJAVI SE</a>
+                      <a onclick="izloguj_se()" href="backend/izloguj-se.php" class="dropdownlink">ODJAVI SE</a>
                     <li>
-                  </form>';}
+                  ';}
           else{
             echo '<li>
                     <a href="forme/prijava.php">PRIJAVI SE</a>

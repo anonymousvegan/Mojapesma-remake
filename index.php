@@ -18,31 +18,19 @@ session_start();
         <link rel="stylesheet" href="prijavi.css">
         <link rel="stylesheet" href="alert.css">
         <link rel="icon" href="fajlovi/logo.png">
-        <script data-ad-client="ca-pub-7058729872957014" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- ovo su moje custom skripte -->
         <script src="script/filter.js" defer></script>
         <script src="script/komentarisanje.js" defer></script>
         <script src="script/lajkuj.js" defer></script>
-        <script src="script/logout.js" defer></script>
         <script src="script/prethodna-sledeca.js" defer></script>
         <script src="script/prikazivise.js" defer></script>
         <script src="script/opcijePesme.js" defer></script>
         <script src="script/promeniboju.js" defer></script>
         <script src="script/alert.js" defer></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
-    </head>
-    <body>
+        <body>
         <?php
-        echo "počinje php kod <br> ";
-        if(!isset($_SESSION["id"]) && !isset($_SESSION["username"])){
-            echo "nije podešena sesija, zato  ulazimo  u proveru kolačića <br>";
+        if(!isset($_SESSION["id"]) && !isset($_SESSION["username"])){  
             include "cookie-prijava.php";
-        }
-        else{
-            echo "podešena  je sesija , nema  potrebe za kolačićima  ";
         }
         ?>
         <?php include "nav.php" ?>
