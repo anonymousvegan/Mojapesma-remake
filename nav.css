@@ -1,0 +1,455 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+header {
+    background: var(--plava);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+h1 {
+    margin: 0;
+    margin-right: 1rem;
+}
+
+.logo-slika {
+    height: 50px;
+    width: 50px;
+}
+
+.logo-naziv {
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, 0.75);
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 4;
+    pointer-events: all;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--plava);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    align-items: center;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+}
+
+.profile-container {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.profile-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 5px;
+}
+.profile-icon img {
+    width: 100%;
+}
+.arrow {
+    height: 30px;
+    width: 30px;
+    padding-top: 5px;
+    display: none;
+    transition: transform 400ms ease-in-out;
+}
+.profile-icon:hover,
+.arrow:hover {
+    cursor: pointer;
+}
+.arrow-toggle {
+    position: absolute ;
+    top:  0;
+    left: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#arrow-toggle{
+    display: none;
+}
+.dropdown-container,
+.kategorije-dropdown {
+    background: var(--plava);
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 175px;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+.kategorije-container {
+    position: relative;
+}
+
+.kategorije-dropdown {
+    width: 275px;
+    left: 0;
+    top: 35px;
+}
+
+.dropdown-container ul,
+.kategorije-dropdown ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+    display: block;
+}
+
+.kategorije-dropdown ul {
+    text-align: left;
+    width: 400px;
+}
+
+.dropdown-container a,
+.kategorije-dropdown a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+    position: relative;
+}
+
+.dropdown-container a:hover,
+.kategorije-dropdown a:hover {
+    color: black;
+}
+
+.dropdown-container a::after,
+.kategorije-dropdown a::after {
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+    background: black;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+    right: 0;
+    left: 0;
+    bottom: -0.5rem;
+}
+
+.dropdown-container a:hover::after,
+.kategorije-dropdown a:hover::after {
+    transform: scale(1, 1);
+}
+
+.dropdown-container li,
+.kategorije-dropdown li {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.kategorije-container:hover .kategorije-dropdown {
+    transform: scale(1, 1);
+}
+
+.kategorije-container:hover .kategorije-dropdown a {
+    opacity: 1;
+    transition: all 300ms ease-out;
+}
+
+.arrow-toggle:checked ~ .dropdown-container {
+    transform: scale(1, 1);
+}
+
+.arrow-toggle:checked ~ .dropdown-container a {
+    opacity: 1;
+    transition: all 300ms ease-out;
+}
+
+.arrow-toggle:checked ~ label > .arrow {
+    transform: translateY(5px);
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr minmax(1fr 1.5fr) 0.25fr;
+    }
+    .arrow{
+        display: flex;
+    }
+    .logo {
+        grid-column: 1 / 2;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .arrow-toggle-label {
+        margin-bottom: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+    nav {
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1, 1);
+        background: none;
+        top: initial;
+        left: initial;
+        grid-column: 2 / 3;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    nav ul {
+        display: flex;
+    }
+    nav li {
+        margin-bottom: 0;
+    }
+
+    nav a,
+    nav span {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a:not(.kda)::before,
+    nav span:not(.kda)::before {
+        content: "";
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -0.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before,
+    nav span:hover::before {
+        transform: scale(1, 1);
+    }
+
+    .profile-container {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        height: 50px;
+    }
+
+    .profile-icon {
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        display: inline-block;
+        border-radius: 50% 50%;
+        overflow: hidden;
+    }
+    .profile-icon img {
+        height: auto;
+        width: 100%;
+        padding: 0;
+    }
+
+
+    .arrow {
+        padding-right: 16px;
+        height: 50px;
+        width: 50px;
+    }
+    .dropdown-container {
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav a,
+    nav span {
+        position: relative;
+    }
+    nav a::after,
+    nav span::after {
+        content: "";
+        display: block;
+        height: 5px;
+        position: absolute;
+        background: black;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+        right: 0;
+        left: 0;
+        bottom: -0.5rem;
+    }
+
+    nav a:hover::after,
+    nav a:hover::after {
+        transform: scale(1, 1);
+    }
+}
+
+@media screen and (max-width: 290px) {
+    h1.logo-naziv {
+        font-size: 14px !important;
+    }
+    .arrow {
+        display: none;
+    }
+    .profile-container {
+        margin-right: 5px;
+    }
+    .logo-slika {
+        visibility: hidden;
+    }
+}
+@media screen and (max-width: 300px) {
+    h1.logo-naziv {
+        font-size: 20px !important;
+    }
+    .arrow {
+        display: none;
+    }
+    .profile-container {
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width: 350px) {
+    h1.logo-naziv {
+        font-size: 25px !important;
+    }
+    .arrow {
+        display: none;
+    }
+    .profile-container {
+        margin-right: 5px;
+    }
+    .logo-naziv {
+        color: white;
+        font-weight: 400;
+        font-size: 2rem;
+        margin-right: 1.5rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    h1.logo-naziv {
+        font-size: 25px !important;
+    }
+}
+.pocetnalink, .pocetnalink:hover{
+    text-decoration:none;
+}

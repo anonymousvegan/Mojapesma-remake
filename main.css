@@ -1,0 +1,67 @@
+:root {
+    --plava: #007bff;
+    --pozadina: #000000c0;
+}
+@font-face {
+    font-family: prvifont;
+    src: url(fajlovi/prvifont.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(fajlovi/Roboto-Regular.ttf);
+}
+main {
+    margin-top: 20px;
+}
+.pesme {
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    justify-content: space-evenly;
+}
+.lista {
+    grid-template-columns: 95%;
+}
+.lista .telo-kartice {
+    height: auto;
+}
+.lista .prikazi-vise {
+    display: none;
+}
+.lista .pesma,
+.lista .naslov {
+    width: 100%;
+}
+.lista .sadrzaj,
+.lista .komentari {
+    width: 50%;
+    margin: 0;
+}
+.lista .kartica .telo-kartice {
+    display: flex;
+}
+.lista .komentari {
+    display: flex;
+}
+.lista .sadrzaj {
+    border-right: 2px solid #ccc;
+}
+.lista p {
+    transition: all .5s;
+    height: auto;
+    overflow-y: auto;
+}
+@media only screen and (max-width: 1200px) {
+    .pesme:not(.lista) {
+        grid-template-columns: 30% 30% 30%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .pesme:not(.lista) {
+        grid-template-columns: 47% 47%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .pesme:not(.lista) {
+        grid-template-columns: 95%;
+    }
+}

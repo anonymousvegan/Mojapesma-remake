@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="col-md-6 col-sm-9 col-xs-12" id="kolona">
-            <form class="form-container" autocomplete="off" method="post" action="../backend/pozadinske/promenilozinku.php">
+            <form class="form-container" autocomplete="off" method="post" action="../backend/promenilozinku.php">
                 <h1>Promeni lozinku</h1>
                 <?php
                     if(isset($_GET["selektor"]) && isset($_GET["validator"])){

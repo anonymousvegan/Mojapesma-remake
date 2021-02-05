@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="col-md-6 col-sm-9 col-xs-12" id="kolona">
-            <form class="form-container" autocomplete="off" method="post" action="../backend/pozadinske/restartuj.php">
+            <form class="form-container" autocomplete="off" method="post" action="../backend/restartuj.php">
                 <h1>Restartuj lozinku</h1>
                 <?php
                     if(isset($_GET["restart"])){

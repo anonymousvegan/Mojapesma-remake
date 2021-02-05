@@ -80,7 +80,7 @@ $sql = "SELECT * FROM  korisnici where username=? AND selector=?;";
                     }
                     echo "pravim sesiju <br>";
                     $_SESSION["id"]=$row["id"];
-                    $_SESSION["username"]=$row["username"];
+                    $_SESSION["ime"]=$row["username"];
                     $_SESSION["godine"]=$row["godine"];
                     $_SESSION["ovlascenje"]=$row["ovlascenje"];
                     echo "sesija-ime:  ". $row["username"];
