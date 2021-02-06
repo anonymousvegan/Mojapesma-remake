@@ -36,7 +36,7 @@ session_start();
         <?php include "nav.php" ?>
         <?php
             $profil="index_stranica_prikazi_sve";
-            if(isset($_SESSION["ime"])){
+            if(isset($_SESSION["id"])){
                 if($_SESSION["ovlascenje"]=="admin"){
                     $ispis="sve";
                     $ovlascenje="admin";
@@ -59,14 +59,13 @@ session_start();
             }
         ?>
         <?php include "main.php" ?>
-        <?php include "foother.php" ?>
         <script>
-            broj=5
+            broj=10
             //deo koda za izbor kategorije
             var kategorija="sve";
             function  promenikategoriju(k){
                 kategorija=k;
-                broj=5
+                broj=10
                 prikazi_jos();
             }
             //ostatak koda
