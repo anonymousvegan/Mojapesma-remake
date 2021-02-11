@@ -61,16 +61,9 @@ session_start();
         <?php include "main.php" ?>
         <script>
             broj=10
-            //deo koda za izbor kategorije
-            var kategorija="sve";
-            function  promenikategoriju(k){
-                kategorija=k;
-                broj=10
-                prikazi_jos();
-            }
             //ostatak koda
             function prikazi_jos(){
-                broj+=5;
+                broj+=10;
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {

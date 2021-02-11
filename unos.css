@@ -1,0 +1,447 @@
+:root {
+    --bela: #fff;
+    --bojaifont: 50px;
+    --crvena: #ff9999;
+    --narandzasta: #ffa366;
+    --zuta: #fff475;
+    --zelena: #ccff90;
+    --plavozelena: #a7ffeb;
+    --svetloplava: #cbf0f8;
+    --tamnoplava: #aecbfa;
+    --ljubicasta: #d7aefb;
+    --roze: #fdcfe8;
+    --braon: #e6c9a8;
+    --dark: #f5f5f5;
+    --bojateksta: #202124;
+}
+#unos form {
+    background-color: transparent;
+}
+#unos {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--pozadina);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in;
+    overflow: hidden;
+}
+#unos.prikazi-unos {
+    animation: gravity-effect forwards 1.5s ease-in-out;
+}
+#unos .telo-kartice {
+    position: relative;
+}
+#unos .pisac {
+    position: static;
+}
+.form-group {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+#unos label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    border-bottom: 1px solid black;
+    pointer-events: none;
+}
+#unos input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: sans-serif;
+    padding-top: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
+}
+#unos label::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    border-bottom: 3px solid var(--plava);
+    transform: translateX(-100%);
+    transition: all 0.3s;
+}
+#unos .label-tekst {
+    position: absolute;
+    bottom: 5px;
+    transform: translate(-0%, 0);
+    transition: all 0.3s ease;
+}
+#unos .form-group input:focus + label .label-tekst,
+#unos .form-group input:valid + label .label-tekst,
+#unos input:not(:placeholder-shown) + label .label-tekst {
+    transform: translate(-0%, -100%);
+    font-size: 14px;
+    color: var(--plava);
+}
+#unos .pomeri {
+    transform: translateY(-100%);
+    color: var(--plava);
+    font-size: 14px;
+}
+#unos .form-group input:focus + label::after,
+#unos .form-group input:valid + label::after,
+#unos input:not(:placeholder-shown) + label::after {
+    transform: translateX(0%);
+}
+.pomeri-border::after {
+    transform: translateX(0px);
+}
+#unos textarea {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 240px;
+    overflow: auto;
+    text-align: center;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+#unos textarea:focus,
+#unos textarea:active {
+    border: 0;
+    outline: 0;
+}
+#unos select[name="kategorija"] {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 0px;
+    outline: 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#unos .btn:hover,
+#unos .btn:focus,
+#unos .btn:active {
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    transition: all 0.4s;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.pogodnost {
+    width: 100%;
+    height: 50px;
+    position: static;
+    display: flex;
+}
+.pogodnost-tekst {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pogodnost-odabir {
+    display: flex;
+    justify-content: left;
+    width: max-content;
+    align-items: center;
+    width: calc(100% - 250px);
+}
+select[name="pogodna"] {
+    outline: 0;
+    color: white;
+    padding-left: 10px;
+    width: 100px;
+    border-radius: 4px;
+}
+select[name="pogodna"] {
+    border-radius: 4px;
+}
+.x {
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 35px;
+    color: black;
+    transition: all 0.5s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    z-index: 5;
+    background: white;
+    border-radius: 50%;
+    line-height: 40px;
+}
+.x:hover,
+.x:active {
+    transform: scale(1.3);
+    color: darkred;
+}
+#unos .kartica {
+    width: 400px;
+    height: 500px;
+    position: static;
+}
+#unos span {
+    display: block;
+}
+#unos label {
+    display: flex;
+    justify-content: center;
+}
+option:last-of-type {
+    border-radius: 5px;
+}
+.boja {
+    width: var(--bojaifont);
+    height: var(--bojaifont);
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#unos .vreme-tekst {
+    width: 200px;
+}
+#unos .vreme-tekst button {
+    width: 200px;
+}
+.boja img {
+    width: 80%;
+    height: 80%;
+}
+.boja:hover .boje {
+    pointer-events: all;
+    opacity: 1;
+}
+.boje {
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s;
+    width: 160px;
+    height: 120px;
+    background-color: #333333cc;
+    position: absolute;
+    top: -119px;
+    left: -11px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap: 0px;
+    justify-items: center;
+    align-items: center;
+}
+.boje::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 25px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+.bojaizbor {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 3px solid black;
+}
+#bela {
+    background-color: var(--bela);
+    border: 3px solid black;
+}
+#crvena {
+    background-color: var(--crvena);
+}
+#narandzasta {
+    background-color: var(--narandzasta);
+}
+#zuta {
+    background-color: var(--zuta);
+}
+#zelena {
+    background-color: var(--zelena);
+}
+#plavozelena {
+    background-color: var(--plavozelena);
+}
+#svetloplava {
+    background-color: var(--svetloplava);
+}
+#tamnoplava {
+    background-color: var(--tamnoplava);
+}
+#ljubicasta {
+    background-color: var(--ljubicasta);
+}
+#roze {
+    background-color: var(--roze);
+}
+#braon {
+    background-color: var(--braon);
+}
+#dark {
+    background-color: var(--dark);
+}
+.aktivna::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "\2713";
+    font-size: 25px;
+    color: black;
+}
+.bela {
+    background-color: white;
+}
+.crvena {
+    background-color: var(--crvena);
+}
+.narandzasta {
+    background-color: var(--narandzasta);
+}
+.zuta {
+    background-color: var(--zuta);
+}
+.zelena {
+    background-color: var(--zelena);
+}
+.plavozelena {
+    background-color: var(--plavozelena);
+}
+.svetloplava {
+    background-color: var(--svetloplava);
+}
+.tamnoplava {
+    background-color: var(--tamnoplava);
+}
+.ljubicasta {
+    background-color: var(--ljubicasta);
+}
+.roze {
+    background-color: var(--roze);
+}
+.braon {
+    background-color: var(--braon);
+}
+.dark {
+    background-color: var(--dark);
+}
+/* responsiv dizajn ovde */
+@media screen and (max-width: 550px) {
+    #unos .pisac {
+        position: relative;
+    }
+    #unos .x {
+        background-color: transparent;
+        top: 3px;
+        right: 0;
+        color: var(--plava);
+        font-size: 40px;
+    }
+    #unos.x:hover,
+    #unos .x:active {
+        transform: scale(1, 1);
+        color: var(--plava);
+    }
+}
+@media screen and (max-width: 500px) {
+    #unos .kartica {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        border-radius: 0px;
+    }
+    #unos .kartica .pisac {
+        border-radius: 0px;
+    }
+    #unos .kartica .pisac .pogodnost-tekst {
+        font-size: 16px;
+        margin: 0;
+        padding: 0px;
+    }
+    #unos .pogodnost-odabir {
+        font-size: 16px;
+        margin: 0;
+        padding: 0px;
+        width: auto;
+    }
+    select[name="pogodna"] {
+        outline: 0;
+        color: white;
+        padding: 5;
+        width: 70px;
+        border-radius: 4px;
+    }
+    #unost .pisac {
+        position: relative;
+    }
+    .x {
+        top: 3px;
+        right: 0;
+        color: var(--plava);
+    }
+    .pogodnost-tekst {
+        width: auto;
+    }
+    .pogodnost {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #unos textarea {
+        height: 100%;
+    }
+    #unos .okvir-za-unos-pesme {
+        height: calc(100% - 120px);
+    }
+}
+@media screen and (max-width: 300px) {
+    .pogodnost-odabir {
+        margin-right: 50px;
+    }
+}
+@media only screen and (max-height: 500px){
+    #unos .kartica{
+        height: auto;
+    }
+    #unos textarea{
+        min-height: 150px;
+        height: auto;
+    }
+}

@@ -1,0 +1,137 @@
+#izbor {
+    width: calc(100% - 40px);
+    margin: 20px;
+    height: 50px;
+    display: flex;
+    top: 48px;
+    z-index: 1;
+    background-color: white;
+}
+#izbor .odabir {
+    justify-self: flex-end;
+    width: 10%;
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 1s;
+}
+#izbor .odabir img {
+    height: 50px;
+}
+#izbor .odabrano {
+    background: #cccccc;
+}
+#izbor .pretraga {
+    width: 40%;
+    max-width: 300px;
+    height: 48px;
+    box-sizing: border-box;
+    margin-right: auto;
+    position: relative;
+}
+#izbor .pretraga .form-group {
+    height: 48px !important;
+    margin: 0;
+    padding: 0;
+}
+#izbor .pretraga label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    border-bottom: 1px solid black;
+    pointer-events: none;
+}
+@media only screen and (max-width: 600px) {
+    #izbor .odabir {
+        display: none;
+    }
+    #izbor .pretraga {
+        width: 100%;
+        max-width: unset;
+    }
+    #izbor .pretraga form {
+        width: 100%;
+        max-width: unset;
+    }
+}
+#izbor .pretraga img {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    transition: 750ms;
+    transform: translateX(0px);
+}
+
+#izbor .pretraga .form-group input:focus ~ img,
+#izbor .pretraga .form-group input:valid ~ img,
+#izbor .pretraga input:not(:placeholder-shown) ~ img {
+    opacity: 0;
+    transform: translateX(-300px);
+}
+#pretraga-dugme {
+    display: none;
+    position: absolute;
+}
+
+@media (max-width: 590px) {
+    #izbor .pretraga .form-group input:focus ~ img,
+    #izbor .pretraga .form-group input:valid ~ img,
+    #izbor .pretraga input:not(:placeholder-shown) ~ img {
+        opacity: 0;
+        transform: translateX(-600px);
+    }
+    #izbor .pretraga img {
+        transition: 1s;
+    }
+}
+#izbor input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: sans-serif;
+    padding-top: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 16px;
+}
+#izbor label::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    border-bottom: 3px solid var(--plava);
+    transform: translateX(-100%);
+    transition: all 0.3s;
+}
+#izbor .label-tekst {
+    position: absolute;
+    bottom: 0px;
+    left: 11px;
+    transition: all 0.3s ease;
+}
+#izbor .form-group input:focus + label .label-tekst,
+#izbor .form-group input:valid + label .label-tekst,
+#izbor input:not(:placeholder-shown) + label .label-tekst {
+    transform: translateY(-100%);
+    color: var(--plava);
+}
+#izbor .form-group input:focus + label::after,
+#izbor .form-group input:valid + label::after,
+#izbor input:not(:placeholder-shown) + label::after {
+    transform: translateX(0px);
+}

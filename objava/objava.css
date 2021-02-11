@@ -1,0 +1,225 @@
+.kartica{
+    margin-bottom: 20px;
+    transition: all 0.5s;
+}
+.kartica pre, p{
+    display: block;
+    line-height: 25px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+    }
+.kartica .pisac{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+.kartica .profilna-pisca {
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+}
+.kartica .tacke{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.kartica .tacke img{
+    width: 100%;
+    height: auto;
+}
+.kartica .profilna-pisca img{
+    width: 100%;
+    height: auto;
+}
+.kartica .telo-kartice:not(.lista .kartica .telo-kartice){
+    height: 345px;
+    margin:0px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.kartica .naslov{
+    margin:0px;
+    padding:0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pesma{
+    margin: 0px;
+    padding: 0px;
+    height: 225px;
+}
+.jos{
+    border:3px solid var(--plava);
+    background: white;
+    color: var(--plava);
+    font-size: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+.prikazi-vise{
+    width: 70%;
+    margin:10px;
+}
+.vreme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.komentari {
+    display: none;
+}
+.srce img{
+    width: 50%;
+    height: 50%;
+}
+
+.srce span {
+    font-size: 1rem;
+    color: #000000;
+}
+
+.jos, jos:hover, jos:active, .jos:focus{
+    outline: 0;
+}
+.srce{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    left: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ikonicazakomentarkontejner {
+    position: absolute;
+    right: 20px;
+}
+
+.ikonicazakomentar{
+    width: 40px;
+    height: 40px;
+}
+div.srce, .ikonicazakomentar{
+    cursor: pointer;
+}
+.animirajsrce{
+    animation-name: animirajsrce;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: easy;
+}
+.animirajsrcedva{
+    animation-name: animirajsrcedva;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: easy;
+}
+@keyframes animirajsrce{
+    0%{
+        transform: scale(1) ;
+    }
+    50%{
+        transform: scale(2) ;
+    }
+    100%{
+        transform: scale(1) ;
+    }
+}
+@keyframes animirajsrcedva{
+    0%{
+        transform: scale(1) ;
+    }
+    50%{
+        transform: scale(0) ;
+    }
+    100%{
+        transform: scale(1) ;
+    }
+}
+
+.opcije {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: 250ms ease-in-out;
+}
+
+.tacke.prikaziopcije  .opcije
+{
+    transform: scale(1, 1);
+}
+
+.opcije a {
+    border-radius: 0;
+    margin-bottom: 5px;
+    width: 100px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: ease-in-out 450ms;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.opcije a:first-child{
+    margin-top: 5px;
+}
+.opcije .btn-warning{
+    color: black;
+}
+
+.opcije a.kliktacke {
+    color: black;
+    cursor: pointer;
+}
+.kartica .opcije::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 17px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
