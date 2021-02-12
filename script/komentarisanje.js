@@ -17,7 +17,7 @@ ekomentar.addEventListener('keyup', function (e) {
                     komentari.scrollTop=komentari.scrollHeight;
                 }
             };
-            xhttp.open("POST", "backend/pozadinske/dodajkomentar.php", false);
+            xhttp.open("POST", "backend/dodajkomentar.php", false);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("komentar="+komentar+"&autor="+autor+"&pesma="+pesma);
         }
@@ -39,7 +39,7 @@ ekomentar.addEventListener('keyup', function (e) {
                 komentari.scrollTop=komentari.scrollHeight;
             }
         };
-        xhttp.open("POST", "backend/pozadinske/dodajkomentar.php", false);
+        xhttp.open("POST", "backend/dodajkomentar.php", false);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("komentar="+komentar+"&autor="+autor+"&pesma="+pesma);
     }

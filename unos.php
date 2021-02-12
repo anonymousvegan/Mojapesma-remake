@@ -1,5 +1,5 @@
 <div id="unos">
-    <form onsubmit="return proveriUnos()" class="form-container" autocomplete="off" method="post" action="backend/pozadinske/unospesme.php">
+    <form onsubmit="return proveriUnos()" class="form-container" autocomplete="off" method="post" action="backend/unospesme.php">
         <div class="card text-center kartica">
             <div class="card-header pisac">
                 <div class="pogodnost">

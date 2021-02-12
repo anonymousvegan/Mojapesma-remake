@@ -71,7 +71,7 @@ if(isset($_POST["promeni"])){ #dozvoljava ulaz samo klikom na dugme!
                             else{
                                 mysqli_stmt_bind_param($stmt, "s", $email);
                                 mysqli_stmt_execute($stmt);
-                                header("location: ../../forme/prijava.php?restart=uspesan");
+                                header("location: ../forme/prijava.php?restart=uspesan");
                             }
                         }
                     }
@@ -81,6 +81,6 @@ if(isset($_POST["promeni"])){ #dozvoljava ulaz samo klikom na dugme!
     }
 }
 else{
-    header("location: ../../forme/prijava.php?greska=nedozvoljeni_restart");
+    header("location: ../forme/prijava.php?greska=nedozvoljeni_restart");
     exit();
 }

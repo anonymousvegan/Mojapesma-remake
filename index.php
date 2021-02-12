@@ -27,6 +27,8 @@ session_start();
         <script src="script/opcijePesme.js" defer></script>
         <script src="script/promeniboju.js" defer></script>
         <script src="script/alert.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    </head>   
         <body>
         <?php
         if(!isset($_SESSION["id"]) && !isset($_SESSION["username"])){  
@@ -60,10 +62,17 @@ session_start();
         ?>
         <?php include "main.php" ?>
         <script>
-            broj=10
+            broj=5
+            //deo koda za izbor kategorije
+            var kategorija="sve";
+            function  promenikategoriju(k){
+                kategorija=k;
+                broj=5
+                prikazi_jos();
+            }
             //ostatak koda
             function prikazi_jos(){
-                broj+=10;
+                broj+=5;
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -82,5 +91,5 @@ session_start();
         </script>
         <?php include "prijavi.php"?>
         <?php include "alert.html"?>
-    </body>
+        </body>
 </html>

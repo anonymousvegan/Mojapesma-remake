@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../backend/pozadinske/vezasabazom.php";
+require "../backend/vezasabazom.php";
 if(isset($_POST["profil"])){
 $profil=$_POST["profil"];
 }
