@@ -71,7 +71,7 @@
                             <img src="fajlovi/private.webp" alt="Privatno"><p>Samo ja</p>
                         </div>
                     </div>
-                    <img src="fajlovi/public.png" />
+                    <img id="publika-slika" src="fajlovi/public.png" />
                 </div>
             </div>
         </div>

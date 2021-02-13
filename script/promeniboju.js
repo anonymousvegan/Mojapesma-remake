@@ -27,10 +27,12 @@ function promeni_tekst_pogodnosti(){
 promeni_tekst_pogodnosti();
 window.addEventListener("resize", promeni_tekst_pogodnosti);
 //promena publike
+var publike;
 function promeni_publiku(publika, rednibroj){
-    var publike=document.getElementsByClassName("publika-izbor")
+    publike=document.getElementsByClassName("publika-izbor")
     for(i=publike.length-1; i>=0; i--){
-    publike[i].classList.remove("aktivna-publika")
+    publike[i].classList.remove("aktivna-publika");
+    document.getElementById("publika-slika").src=publike[rednibroj].querySelector("img").src;
     }
     publike[rednibroj].classList.add("aktivna-publika");
     publikainput=document.getElementById("publikainput");
