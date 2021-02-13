@@ -26,3 +26,13 @@ function promeni_tekst_pogodnosti(){
 }
 promeni_tekst_pogodnosti();
 window.addEventListener("resize", promeni_tekst_pogodnosti);
+//promena publike
+function promeni_publiku(publika, rednibroj){
+    var publike=document.getElementsByClassName("publika-izbor")
+    for(i=publike.length-1; i>=0; i--){
+    publike[i].classList.remove("aktivna-publika")
+    }
+    publike[rednibroj].classList.add("aktivna-publika");
+    publikainput=document.getElementById("publikainput");
+    publikainput.value=publika;
+}
