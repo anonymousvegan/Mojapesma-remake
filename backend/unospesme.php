@@ -28,9 +28,7 @@ if(isset($_POST["unosdugme"])){
             $sql = "INSERT INTO pesme (id_pisca, naslov, pesma, pogodna, vreme, kategorija,  boja, publika) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
             $stmt= mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
-                #header("location: ../index.php?greska=sql_greska");
-                echo $id_pisca ."<br>".$naslov."<br>".$pesma."<br>".$pogodna."<br>".$vreme."<br>";
-                echo $kategorija ."<br>".$boja."<br>".$publika;
+                header("location: ../index.php?greska=sql_greska");
                 exit();
             }   
             else{
