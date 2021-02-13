@@ -17,6 +17,7 @@ if (isset($_POST["restartuj-dugme"])){
             $selektor = bin2hex(random_bytes(8));
             $token = random_bytes(32);
             $url = "https://mojapesma.com/forme/unesite-novu-lozinku.php?selektor=" . $selektor . "&validator=".bin2hex($token);
+            date_default_timezone_set("Europe/Belgrade");
             $vreme = date("U")+1800;
             $sql = "DELETE FROM passwordrestart WHERE email=?";
             $stmt= mysqli_stmt_init($conn);

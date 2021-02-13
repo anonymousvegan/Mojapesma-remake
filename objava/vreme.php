@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Europe/Belgrade");
 $trenutnovreme = date("U");
 $pre_koliko =$trenutnovreme - $red["vreme"];
 if($pre_koliko<60){

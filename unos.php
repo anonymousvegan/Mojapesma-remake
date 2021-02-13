@@ -16,15 +16,15 @@
             <div class="card-body telo-kartice">
                 <input type="hidden" id="bojainput" name="boja" value="bela">
                 <input type="hidden" id="publikainput" name="publika" value="javno">
-                <input type="hidden" name="pisac" value="<?php echo $_SESSION['ime'];?>">
+                <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
                 <div class="form-group">
-                    <input minlength="2" maxlength="20" onkeyup="proveri()" type="text"  placeholder=" " name="naslov" id="naslov" aria-describedby="emailHelp" autocomplete="off" required >
+                    <input minlength="2" maxlength="20"  type="text"  placeholder=" " name="naslov" id="naslov" aria-describedby="emailHelp" autocomplete="off" required >
                     <label for="naslov" id="lnaslov">
                         <span class="label-tekst" id="username-label-tekst">Naslov</span>
                     </label>
                 </div>
                 <div class="okvir-za-unos-pesme">
-                    <textarea require minlength="30" onkeyup="proveri()" id="unospesme" name="pesma" placeholder="Tekst pesme"></textarea>
+                    <textarea require minlength="30"  id="unospesme" name="pesma" placeholder="Tekst pesme"></textarea>
                 </div>
                 <select class="btn btn-primary" name="kategorija" id="kategorija">
                     <option value="neodredjeno">Odaberite Kategodiju</option>

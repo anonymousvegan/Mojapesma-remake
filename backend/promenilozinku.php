@@ -12,6 +12,7 @@ if(isset($_POST["promeni"])){ #dozvoljava ulaz samo klikom na dugme!
         echo "šifre koje ste uneli se ne poklapaju";
         exit();
     }
+    date_default_timezone_set("Europe/Belgrade");
     $trenutnovreme= date("U");
     require "vezasabazom.php";
     $sql = "SELECT * FROM  passwordrestart where selektor=? AND vreme>=?";
