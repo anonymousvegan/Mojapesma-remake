@@ -25,6 +25,10 @@ if(isset($_POST["unosdugme"])){
             $pogodna= $_POST["pogodna"];
             $boja = $_POST["boja"];
             $publika= $_POST["publika"];
+            if($pogodna=="jeste"){
+            proveri($naslov);
+            proveri($pesma);
+            }
             $sql = "INSERT INTO pesme (id_pisca, naslov, pesma, pogodna, vreme, kategorija,  boja, publika) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
             $stmt= mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -41,4 +45,31 @@ if(isset($_POST["unosdugme"])){
 }
 else{
     echo 'mislimo da nemate pristup ovoj stranici, vratite se na <a href="../index.php">početnu stranicu</a>';
+}
+function proveri($s) {
+    $reci = ["jeb", 
+    "kurac",
+    "kurca",
+    "kurcu",
+    "sranj",
+    "kurv",
+    "govn",
+    "peder",
+    "dupe",
+    "sisa",
+    "sise",
+    "pičk",
+    "pick",
+    "kokain",
+    "heroin",
+    "marihuana",
+    "prostitut",
+    "alkohol",
+    "cig"];
+    foreach ($reci as $rec){
+        $pozicija = strpos($s, $rec);
+        if($pozicija!==false){
+            $GLOBALS["pogodna"]="nije";
+        }    
+    }
 }
