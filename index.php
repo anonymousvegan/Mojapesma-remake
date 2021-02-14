@@ -37,7 +37,6 @@ session_start();
         ?>
         <?php include "nav.php" ?>
         <?php
-            $profil="index_stranica_prikazi_sve";
             if(isset($_SESSION["id"])){
                 if($_SESSION["ovlascenje"]=="admin"){
                     $ispis="sve";
@@ -62,14 +61,8 @@ session_start();
         ?>
         <?php include "main.php" ?>
         <script>
-            broj=5
-            //deo koda za izbor kategorije
+            broj=5;
             var kategorija="sve";
-            function  promenikategoriju(k){
-                kategorija=k;
-                broj=5
-                prikazi_jos();
-            }
             //ostatak koda
             function prikazi_jos(){
                 broj+=5;
@@ -79,9 +72,9 @@ session_start();
                     document.getElementById("pesme").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("POST", "objava/prikazi_jos.php", false);
+            xhttp.open("POST", "objava/objava.php", false);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("broj="+broj+"&kategorija="+kategorija);
+            xhttp.send("broj="+broj);
             }
             $(window).scroll(function() {
             if($(window).scrollTop() + window.innerHeight >= $(document).height()-100) {

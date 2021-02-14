@@ -1,53 +1,28 @@
 <?php
-if(isset($_POST["kategorija"])){
-  $kategorija= $_POST["kategorija"];
+if(!isset($_SESSION["id"])){
+	session_start();
 }
-else{
-  $kategorija="sve";
+if(!isset($conn)){
+	require "../backend/vezasabazom.php";
 }
-if($kategorija=="sve"){
-  $deosqlazaktegoriju=" ";
-  $deosqlazaktegorijusaand=" ";
-}
-else{
-  $deosqlazaktegoriju= " where kategorija='". $kategorija. "'";
-  $deosqlazaktegorijusaand=" AND kategorija='". $kategorija. "'";
+(isset($_POST["broj"])) ? $broj=$_POST["broj"] : $broj= 10;
+(isset($_POST["profil"])) ? $profil=$_POST["profil"] : $profil= "index_stranica_prikazi_sve";
+if(isset($_SESSION["id"])){
+	$ovlascenje=$_SESSION["ovlascenje"];
+	($_SESSION["godine"])
 }
 if($profil=="index_stranica_prikazi_sve"){
   if ($ovlascenje=="admin"){
-    $sql= "SELECT * FROM pesme " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
+    $sql= "SELECT * FROM pesme  ORDER BY vreme DESC LIMIT ". $broj.";";
   }
   else{
     if($ispis=="sve"){
-      $sql= "SELECT * FROM pesme " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
+     	$sql= "SELECT * FROM pesme  ORDER BY vreme DESC LIMIT  ". $broj.";";
     }
     else if($ispis=="filter"){
-      $sql= "SELECT * FROM pesme  WHERE pogodna='jeste' " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5; ";
+        $sql= "SELECT * FROM pesme  WHERE pogodna='jeste' ORDER BY vreme DESC LIMIT  ". $broj.";";
     }
 }}
-else if($profil=="pretraga_stranica_prikazi_rezultate"){
-  if ($ovlascenje=="admin"){
-    $sql= "SELECT * FROM pesme WHERE  (pesma like '%".$pretraga . "%' OR naslov like '%".$pretraga . "%') " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
-  }else{
-    if($ispis=="sve"){
-      $sql= "SELECT * FROM pesme WHERE  (pesma like '%".$pretraga . "%' OR naslov like '%".$pretraga . "%')" .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
-    }
-    else if($ispis=="filter"){
-      $sql= "SELECT * FROM pesme WHERE (pesma like '%".$pretraga . "%' OR naslov like '%".$pretraga . "%') AND pogodna='jeste' " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
-    }
-  }
-}
-else{
-  if ($ovlascenje=="admin"){
-    $sql= "SELECT * FROM pesme WHERE pisac='".$profil . "' " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
-  }
-  else{
-    if($ispis=="sve"){
-    $sql= "SELECT * FROM pesme WHERE pisac='". $profil . "' " .$deosqlazaktegoriju. " ORDER BY vreme DESC LIMIT 5;";
-    }
-    else if($ispis=="filter"){
-      $sql= "SELECT * FROM pesme WHERE pogodna='jeste' AND pisac='". $profil . "' " .$deosqlazaktegoriju. "ORDER BY vreme DESC LIMIT 5;";
-    } 
-}}
+echo $sql;
 require "ispis.php";
 ?>
