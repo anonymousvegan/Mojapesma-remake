@@ -50,7 +50,7 @@
               while($red=mysqli_fetch_assoc($rezultat)){
                 $tip= gettype($red["profilna"]);
                 if($tip=="null" || $tip=="NULL" || $tip==null){
-                  echo "fajlovi/profile-icon.svg";
+                  echo "profile-icon.svg";
                 }
                 else if($tip=="string"){
                   echo  $red["profilna"];
