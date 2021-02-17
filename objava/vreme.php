@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set("Europe/Belgrade");
 $trenutnovreme = date("U");
-$pre_koliko =$trenutnovreme - $red["vreme"];
+$pre_koliko =$trenutnovreme - $vremesifrovano;
 if($pre_koliko<60){
   if ($pre_koliko==1 || $pre_koliko==21 ||$pre_koliko==31 ||$pre_koliko==41 || $pre_koliko==51){
     $rec_s= " sekund ";
@@ -62,6 +62,6 @@ else if($pre_koliko<2592000){
   $vreme = "pre ". $dana . $rec_d;
 }
 else{
-  $vreme = date("d/m/Y H:i", $red["vreme"]);
+  $vreme = date("d/m/Y H:i", $vremesifrovano);
 }
 ?>

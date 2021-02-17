@@ -11,6 +11,7 @@ while($red=mysqli_fetch_assoc($rezultat)){
 		$niz_lajkova=json_decode($lajkovao);
 		$broj_lajkova=count($niz_lajkova);
 	}
+	$vremesifrovano=$red["vreme"];
 	require "vreme.php";
 	$sql_za_pisca =  "SELECT * FROM korisnici WHERE id='". $red["id_pisca"] ."';";
 	$rezultati_za_pisca= mysqli_query($conn, $sql_za_pisca);
