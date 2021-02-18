@@ -32,6 +32,5 @@ if($profil=="index_stranica_prikazi_sve"){
 		$sql ="SELECT *  FROM pesme WHERE pogodna='jeste' and publika='javno' ORDER BY vreme DESC LIMIT  ". $broj.";";
 	}
 }
-echo $sql;
 require "ispis.php";
 ?>
