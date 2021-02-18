@@ -26,7 +26,6 @@ function otkazivanje(){
     vrati_staru(trenutnaslika);
 }
 function vrati_staru(staraslika){
-    console.log(staraslika);
     document.getElementById("slika").remove();
     var nova= document.createElement("IMG");
     document.getElementById("profilna").appendChild(nova);

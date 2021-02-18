@@ -46,7 +46,6 @@ ekomentar.addEventListener('keyup', function (e) {
 }
 function prikazikomentare(id){
     if(screen.width<=600){
-        console.log("manje od 600")
         trenutnoaktivna=id;
         const kartica = document.getElementById(id);
         let vreme= kartica.querySelector(".vreme-tekst").textContent;

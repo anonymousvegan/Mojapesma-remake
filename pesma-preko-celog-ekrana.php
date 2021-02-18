@@ -28,7 +28,7 @@
             <div id="vreme-preko-celog-ekrana"></div>
             <div class="x" onclick="zatvori_pesmu_preko_celog_ekrana()">&times;</div>
         </div>
-        <input id="autorkomentara" type="hidden" name="autor" value="<?php echo $_SESSION['ime']?>">
+        <input id="autorkomentara" type="hidden" name="autor" value="<?php echo $_SESSION['id']?>">
         <input id="id-pesme-za-komentarisanje" type="hidden" name="idpesme">
         <div id="komentari">
         <?php  require "ispiskomentara.php";?>

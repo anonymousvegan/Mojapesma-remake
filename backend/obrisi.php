@@ -1,7 +1,7 @@
 <?php
 session_start();
 $idpesme = $_POST["idpesme"];
-require "pozadinske/vezasabazom.php";
+require "vezasabazom.php";
 if(isset($_SESSION["id"])){
     $idkorisnika=$_SESSION["id"];
     $sql = "SELECT * FROM korisnici where id=". $idkorisnika;

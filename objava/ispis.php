@@ -20,7 +20,7 @@ while($red=mysqli_fetch_assoc($rezultat)){
 		$profilna_pisca=$red_za_pisca["profilna"];
 		$tip=gettype($profilna_pisca);
 		if($tip=="null" || $tip=="NULL" || $tip==null){
-			$profilna="fajlovi/profile-icon.svg";
+			$profilna_pisca="fajlovi/profilna.png";
 		}
 		else if ($tip == "string") {
 			$profilna_pisca = "fajlovi/". $profilna_pisca;

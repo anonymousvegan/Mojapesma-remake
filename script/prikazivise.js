@@ -70,7 +70,7 @@ function prikazivise(id){
         };
         xhttp.open("POST", "ispiskomentara.php", false);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("id="+id);
+        xhttp.send("idpesme="+id);
         komentari=document.getElementById("komentari");
         komentari.scrollTop=komentari.scrollHeight;
     }
